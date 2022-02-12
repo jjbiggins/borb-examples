@@ -26,7 +26,7 @@ def create_document():
     # create PageLayout
     l: PageLayout = MultiColumnLayout(p)
 
-    for _ in range(0, 20):
+    for _ in range(20):
         if l.get_page() != p or page_number == 1:
             l.add(
                 Paragraph(

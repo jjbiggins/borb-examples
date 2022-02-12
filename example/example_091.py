@@ -116,11 +116,11 @@ def main():
     )
     for i in h_clues:
         grid.add(TableCell(Paragraph(str(i)), preferred_height=w, preferred_width=w))
-    for i in range(0, 10):
+    for i in range(10):
         grid.add(
             TableCell(Paragraph(str(v_clues[i])), preferred_height=w, preferred_width=w)
         )
-        for j in range(0, 10):
+        for j in range(10):
             if tree_layout[i * 10 + j] == "_":
                 grid.add(
                     TableCell(Paragraph(" "), preferred_height=w, preferred_width=w)

@@ -24,7 +24,7 @@ class LZWDecode:
         """
 
         # trivial case
-        if len(bytes_in) == 0:
+        if not bytes_in:
             return bytes_in
 
         # Build the dictionary.

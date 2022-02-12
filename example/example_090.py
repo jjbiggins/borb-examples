@@ -98,7 +98,7 @@ def main():
                 )
 
     def insert_blanks(n: int):
-        for _ in range(0, n):
+        for _ in range(n):
             grid.add(TableCell(Paragraph(" "), preferred_width=w, preferred_height=w))
 
     insert_clues(

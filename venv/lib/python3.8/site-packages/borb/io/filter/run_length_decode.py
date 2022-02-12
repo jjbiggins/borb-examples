@@ -25,14 +25,14 @@ class RunLengthDecode:
         """
 
         # trivial case
-        if len(bytes_in) == 0:
+        if not bytes_in:
             return bytes_in
 
         bytes_out = bytearray()
         for i in range(0, len(bytes_in), 2):
             b = bytes_in[i]
             n = bytes_in[i + 1]
-            for j in range(0, n):
+            for _ in range(n):
                 bytes_out.append(b)
 
         return bytes(bytes_out)

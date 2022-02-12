@@ -23,7 +23,7 @@ class Trie:
 
         def __len__(self) -> int:
             return (0 if self._value is None else 1) + sum(
-                [len(v) for k, v in self._children.items()]
+                len(v) for k, v in self._children.items()
             )
 
     def __init__(self):

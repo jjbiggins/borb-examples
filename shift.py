@@ -33,7 +33,7 @@ def insert_example_at(n: int) -> None:
         # determine new number (as str)
         new_number_str: str = str(old_number + 1)
         while len(new_number_str) < 3:
-            new_number_str = "0" + new_number_str
+            new_number_str = f'0{new_number_str}'
 
         # determine the path of the file
         new_path: Path = f.parent / ("example_%s.py" % new_number_str)
@@ -77,12 +77,12 @@ def insert_img_at(n: int) -> None:
         # determine old number (as str)
         old_number_str: str = str(old_number)
         while len(old_number_str) < 3:
-            old_number_str = "0" + old_number_str
+            old_number_str = f'0{old_number_str}'
 
         # determine new number (as str)
         new_number_str: str = str(old_number + 1)
         while len(new_number_str) < 3:
-            new_number_str = "0" + new_number_str
+            new_number_str = f'0{new_number_str}'
 
         # determine the path of the file
         new_path: Path = f.parent / (old_name.replace(old_number_str, new_number_str))

@@ -71,7 +71,7 @@ def get_values_from_form():
         v: str = str(doc.get_page(0).get_form_field_value(k))
         while len(k) < 16:
             k += " "
-        print(k + " : " + v)
+        print(f'{k} : {v}')
 
 def main():
     build_pdf()

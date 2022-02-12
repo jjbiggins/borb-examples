@@ -8,8 +8,8 @@ def modify_image(image: PILImage.Image):
     w = image.width
     h = image.height
     pixels = image.load()
-    for i in range(0, w):
-        for j in range(0, h):
+    for i in range(w):
+        for j in range(h):
             r, g, b = pixels[i, j]
 
             # convert to sepia

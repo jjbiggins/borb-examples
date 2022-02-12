@@ -23,30 +23,26 @@ class ASCII85Decode:
         exceptions_to_throw = []
 
         # trivial case
-        if len(bytes_in) == 0:
+        if not bytes_in:
             return bytes_in
 
         # trimming
         if bytes_in[-1] == 10 and bytes_in[-2] == 13:
-            bytes_in = bytes_in[0:-2]
+            bytes_in = bytes_in[:-2]
         if bytes_in[-1] == 10:
-            bytes_in = bytes_in[0:-1]
+            bytes_in = bytes_in[:-1]
         if bytes_in[-1] == 13:
-            bytes_in = bytes_in[0:-1]
+            bytes_in = bytes_in[:-1]
 
         # normal decode
         try:
             return base64.a85decode(bytes_in)
         except Exception as e:
             exceptions_to_throw.append(e)
-            pass
-
         # adobe decode
         try:
             return base64.a85decode(bytes_in, adobe=True)
         except Exception as e:
             exceptions_to_throw.append(e)
-            pass
-
         # we should not be here
         raise exceptions_to_throw[0]

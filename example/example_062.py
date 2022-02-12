@@ -54,7 +54,7 @@ def create_report():
 
     # extract colors
     colors: typing.List[typing.Tuple[RGBColor, Decimal]] = l.get_colors_for_page(0)
-    colors = colors[0:32]
+    colors = colors[:32]
 
     # create output Document
     doc_out: Document = Document()

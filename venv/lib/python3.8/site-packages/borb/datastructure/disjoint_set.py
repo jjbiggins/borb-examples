@@ -27,10 +27,7 @@ class disjointset:
         """
         Find the root of an element in this disjointset
         """
-        if self._parents[x] == x:
-            return x
-        else:
-            return self.find(self._parents[x])
+        return x if self._parents[x] == x else self.find(self._parents[x])
 
     def union(self, x: Any, y: Any) -> "disjointset":
         """

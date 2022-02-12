@@ -17,7 +17,7 @@ def main():
 
     # add 10 pages
     N: int = 10
-    for i in range(0, N):
+    for i in range(N):
         page: Page = Page()
         doc.append_page(page)
 

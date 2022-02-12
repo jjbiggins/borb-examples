@@ -68,7 +68,7 @@ def main():
     layout_002._previous_element_y = max_y - layout_002._vertical_margin
 
     # add content
-    for _ in range(0, 10):
+    for _ in range(10):
         layout_002.add(
             Paragraph(
                 """

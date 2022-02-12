@@ -27,11 +27,7 @@ def decode_stream(s: Stream) -> Stream:
     # determine filter(s) to apply
     filters: typing.List[str] = []
     if "Filter" in s:
-        if isinstance(s["Filter"], List):
-            filters = s["Filter"]
-        else:
-            filters = [s["Filter"]]
-
+        filters = s["Filter"] if isinstance(s["Filter"], List) else [s["Filter"]]
     decode_params: typing.List[Dictionary] = []
     if "DecodeParms" in s:
         if isinstance(s["DecodeParms"], List):
@@ -42,7 +38,7 @@ def decode_stream(s: Stream) -> Stream:
             assert isinstance(s["DecodeParms"], Dictionary)
             decode_params = [s["DecodeParms"]]
     else:
-        decode_params = [Dictionary() for x in range(0, len(filters))]
+        decode_params = [Dictionary() for _ in range(len(filters))]
 
     # apply filter(s)
     transformed_bytes = s["Bytes"]

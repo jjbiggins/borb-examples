@@ -141,11 +141,11 @@ def _build_itemized_description_table(products: typing.List[Product] = []):
     # Optionally add some empty rows to have a fixed number of rows for styling purposes
     for row_number in range(len(products), 10):
         c = even_color if row_number % 2 == 0 else odd_color
-        for _ in range(0, 4):
+        for _ in range(4):
             table_001.add(TableCell(Paragraph(" "), background_color=c))
 
     # subtotal
-    subtotal: float = sum([x.price_per_sku * x.quantity for x in products])
+    subtotal: float = sum(x.price_per_sku * x.quantity for x in products)
     table_001.add(
         TableCell(
             Paragraph(

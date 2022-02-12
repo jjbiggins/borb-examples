@@ -15,7 +15,7 @@ def create_document_001():
     d: Document = Document()
 
     N: int = 10
-    for i in range(0, N):
+    for i in range(N):
         p: Page = Page()
         d.append_page(p)
         l: PageLayout = SingleColumnLayout(p)
@@ -49,7 +49,7 @@ def create_document_002():
     d: Document = Document()
 
     N: int = 10
-    for i in range(0, N):
+    for i in range(N):
         p: Page = Page()
         d.append_page(p)
         l: PageLayout = SingleColumnLayout(p)
@@ -94,12 +94,9 @@ def main():
 
     # create new document
     d: Document = Document()
-    for i in range(0, 10):
+    for i in range(10):
         p: typing.Optional[Page] = None
-        if i % 2 == 0:
-            p = doc_001.get_page(i)
-        else:
-            p = doc_002.get_page(i)
+        p = doc_001.get_page(i) if i % 2 == 0 else doc_002.get_page(i)
         d.append_page(p)
 
     # write
